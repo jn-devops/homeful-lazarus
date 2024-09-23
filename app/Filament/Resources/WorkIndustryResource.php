@@ -18,7 +18,7 @@ class WorkIndustryResource extends Resource
     protected static ?string $model = WorkIndustry::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Admin';
+    protected static ?string $navigationGroup = 'Dropdowns';
     public static function form(Form $form): Form
     {
         return $form
