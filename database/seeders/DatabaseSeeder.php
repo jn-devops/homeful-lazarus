@@ -14,10 +14,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+//
+//        User::factory()->create([
+//            'name' => 'Test User',
+//            'email' => 'test@example.com',
+//        ]);
+        $this->call([
+            PhilippineStandardGeographicalCodeSeeder::class,
+            SuffixSeeder::class,
+            CivilStatusSeeder::class,
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            UserSeeder::class,
+            CurrentPostionSeeder::class,
+            EmploymentStatusSeeder::class,
+            EmploymentTypeSeeder::class,
+            TenureSeeder::class,
+            WorkIndustrySeeder::class,
+            YearsOfOperationSeeder::class,
+            HomeOwnershipSeeder::class,
+            NationalitySeeder::class,
         ]);
     }
 }
