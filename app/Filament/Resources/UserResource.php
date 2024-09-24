@@ -87,7 +87,7 @@ class UserResource extends Resource
                     ->native(false)
                     ->columnSpanFull(),
                 Placeholder::make('created')
-                    ->content(fn ( $record): string => $record->created_at->toFormattedDateString()),
+                    ->content(fn ( $record): string =>$record==null?'': $record->created_at->toFormattedDateString()),
             ])->columnSpan(3),
         ])->columns(12);
     }
