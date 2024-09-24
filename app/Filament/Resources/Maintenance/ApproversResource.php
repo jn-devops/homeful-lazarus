@@ -4,16 +4,13 @@ namespace App\Filament\Resources\Maintenance;
 
 use App\Filament\Resources\Maintenance\ApproversResource\Pages;
 use App\Filament\Resources\Maintenance\ApproversResource\RelationManagers;
-use App\Models\Maintenance\Approvers;
+use App\Models\Approvers;
 use Filament\Forms;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
 
 class ApproversResource extends Resource

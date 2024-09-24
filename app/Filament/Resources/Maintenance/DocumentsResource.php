@@ -5,24 +5,18 @@ namespace App\Filament\Resources\Maintenance;
 use App\Filament\Resources\Maintenance\DocumentsResource\Pages;
 use App\Filament\Resources\Maintenance\DocumentsResource\RelationManagers;
 use App\Livewire\DocumentPreviewComponent;
+use App\Models\Approvers;
 use App\Models\Companies;
 use App\Models\Documents;
-use App\Models\Maintenance\Approvers;
 use App\Models\Projects;
 use Carbon\Carbon;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Livewire;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Homeful\Contacts\Models\Contact;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use phpDocumentor\Reflection\Types\False_;
-use Filament\Forms\Components\FileUpload;
-use Illuminate\Support\Facades\Schema;
-use Filament\Forms\Components\Livewire;
 use ValentinMorice\FilamentJsonColumn\FilamentJsonColumn;
 
 class DocumentsResource extends Resource
