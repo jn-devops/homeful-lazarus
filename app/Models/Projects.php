@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Homeful\Properties\Models\Project;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Projects extends Model
+class Projects extends Project
 {
     use HasFactory;
     protected $fillable = ['code', 'description','active'];

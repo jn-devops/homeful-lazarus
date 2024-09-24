@@ -63,7 +63,6 @@ class ContactResource extends Resource
     protected static ?string $recordTitleAttribute ='last_name';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     public static function  infolist(Infolist $infolist): Infolist
     {
         return $infolist

@@ -19,6 +19,7 @@ class PhilippineCityResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Dropdowns';
+    protected static ?string $recordTitleAttribute ='city_municipality_description';
     public static function form(Form $form): Form
     {
         return $form
