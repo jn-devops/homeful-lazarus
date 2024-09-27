@@ -536,17 +536,17 @@ class ContactResource extends Resource
                                             ->maxLength(255)
                                             ->columnSpan(3),
                                         Group::make()->schema([
-                                            TextInput::make('buyer_employment.tin')
+                                            TextInput::make('buyer_employment.id.tin')
                                                 ->label('Tax Identification Number')
                                                 ->required()
                                                 ->maxLength(255)
                                                 ->columnSpan(3),
-                                            TextInput::make('buyer_employment.pag_ibig')
+                                            TextInput::make('buyer_employment.id.pag_ibig')
                                                 ->label('PAG-IBIG Number')
                                                 ->required()
                                                 ->maxLength(255)
                                                 ->columnSpan(3),
-                                            TextInput::make('buyer_employment.sss_gsis')
+                                            TextInput::make('buyer_employment.id.sss_gsis')
                                                 ->label('SSS/GSIS Number')
                                                 ->required()
                                                 ->maxLength(255)
@@ -655,9 +655,9 @@ class ContactResource extends Resource
                                             Select::make('buyer_employment.employer.address.barangay')
                                                 ->searchable()
                                                 ->options(fn (Get $get): Collection =>PhilippineBarangay::query()
-                                                    ->where('region_code', $get('buyer_employment.employer.address.present.region'))
+                                                    ->where('region_code', $get('buyer_employment.employer.address.region'))
 //                                                    ->where('province_code', $get('buyer.address.present.province'))                                            ->where('province_code', $get('province'))
-                                                    ->where('city_municipality_code', $get('buyer_employment.employer.address.present.city'))
+                                                    ->where('city_municipality_code', $get('buyer_employment.employer.address.city'))
                                                     ->pluck('barangay_description', 'barangay_code')
                                                 )
                                                 ->required(fn(Get $get):bool => $get('buyer_employment.employer.address.country') == 'PH')
@@ -665,7 +665,7 @@ class ContactResource extends Resource
                                                 ->native(false)
                                                 ->live()
                                                 ->columnSpan(3),
-                                            TextInput::make('buyer_employment.employer.address.present.address')
+                                            TextInput::make('buyer_employment.employer.address.address')
                                                 ->label(fn(Get $get)=>$get('buyer_employment.employer.address.country')!='PH'?'Full Address':'Unit Number, House/Building/Street No, Street Name')
                                                 ->placeholder(fn(Get $get)=>$get('buyer_employment.employer.address.country')!='PH'?'Full Address':'Unit Number, House/Building/Street No, Street Name')
                                                 ->required(fn(Get $get):bool => $get('buyer_employment.employer.address.country') != 'PH')
